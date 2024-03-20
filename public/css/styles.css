@@ -1,0 +1,11 @@
+img.marker-icon-blue { 
+    filter: hue-rotate(0deg); 
+}
+
+img.marker-icon-red { 
+    filter: hue-rotate(150deg); 
+}
+
+img.marker-icon-green { 
+    filter: hue-rotate(270deg); 
+}
