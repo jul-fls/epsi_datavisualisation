@@ -25,14 +25,17 @@
                 <h2 class="text-2xl font-bold text-center">Nombre d'accidents</h2>
                 <span id="nb_accidents" class="text-2xl font-bold text-center">0</span>
             </div>
-            <div class="col-start-1 col-span-1 row-span-1 row-start-2 text-center h-full p-auto border-4 border-solid border-gray-500 rounded-xl">
+            <div class="col-start-1 col-span-1 row-span-1 row-start-2 text-center h-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Répartition par sexe</h3>
                 <canvas id="genderChartPercent" class="w-full my-4"></canvas>
             </div>
-            <div class="col-start-1 col-span-1 row-start-3 row-span-1 text-center h-full p-auto border-4 border-solid border-gray-500 rounded-xl">
+            <div class="col-start-1 col-span-1 row-start-3 row-span-1 text-center h-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Répartition par ville</h3>
                 <canvas id="cityChartPercent" class="w-full my-4"></canvas>
             </div>
-            <div class="col-span-4 row-span-3 col-start-2 row-start-1 text-center h-full p-auto border-4 border-solid border-gray-500 rounded-xl">
-                <div id="carte_des_accidents_routiers" style="width:100%; height:100%; visibility:hidden"></div>
+            <div class="col-span-4 row-span-3 col-start-2 row-start-1 text-center h-full pt-4 p-auto border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center pb-1">Carte des accidents</h3>
+                <div id="carte_des_accidents_routiers" class="rounded-b-xl" style="width:100%; height:94.5%; visibility:hidden"></div>
             </div>
         </div>
 
@@ -40,26 +43,33 @@
         <h1 class="w-full text-center text-3xl font-bold pb-8 pt-4">Détails</h1>
 
         <div class="justify-center items-center grid grid-cols-3 grid-rows-3 gap-4 p-4 w-full" style="height:90vh;">
-            <div class="text-center h-full w-full p-auto border-4 border-solid border-gray-500 rounded-xl">
+            <div class="text-center h-full w-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Répartition par ville</h3>
                 <canvas id="cityChartQuantity" class="w-full my-4"></canvas>
             </div>
-            <div class="text-center h-full w-full p-auto border-4 border-solid border-gray-500 rounded-xl">
+            <div class="text-center h-full w-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Répartition par sexe</h3>
                 <canvas id="genderChartQuantity" class="w-full my-4"></canvas>
             </div>
-            <div class="text-center h-full w-full p-auto border-4 border-solid border-gray-500 rounded-xl">
+            <div class="text-center h-full w-full p-auto pb-12 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center pt-4">Répartition par motif de trajet</h3>
                 <canvas id="repartition_motifs_trajets" class="w-full my-4"></canvas>
             </div>              
-            <div class="row-start-2 text-center h-full w-full p-auto border-4 border-solid border-gray-500 rounded-xl">
+            <div class="row-start-2 text-center h-full w-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Nb d'accidents par nb d'usagers impliqués</h3>
                 <canvas id="nb_accidents_par_nb_usagers_impliques" class="w-full my-4"></canvas>
             </div>
-            <div class="row-start-2 text-center h-full w-full p-auto border-4 border-solid border-gray-500 rounded-xl">
-                <canvas id="impact_lumiere_accidents" class="w-full my-4"></canvas>
+            <div class="row-start-2 text-center h-full w-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Impact de la lumière sur les accidents</h3>
+                <canvas id="impact_lumiere_accidents" class="w-full my-4 pb-4"></canvas>
             </div>
-            <div class="row-start-2 text-center h-full w-full p-auto border-4 border-solid border-gray-500 rounded-xl">
+            <div class="row-start-2 text-center h-full w-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Nombre d'accidents par mois</h3>
                 <canvas id="nb_accidents_par_mois" class="w-full my-4"></canvas>
             </div>
-            <div class="col-span-3 row-start-3 text-center h-full w-full p-auto border-4 border-solid border-gray-500 rounded-xl">
-                <!-- <canvas id="evolution_nb_accidents_annuellement" class="w-full my-4"></canvas> -->
+            <div class="col-span-3 row-start-3 text-center h-full w-full p-4 border-4 border-solid border-gray-500 rounded-xl">
+                <h3 class="text-2xl font-bold text-center">Evolution du nombre d'accidents annuellement</h3>
+                <canvas id="evolution_nb_accidents_annuellement" class="w-full my-4"></canvas>
             </div>
         </div>
         <script>
@@ -83,5 +93,6 @@
         <script src="public/js/nb_accidents_par_nb_usagers_impliques.js"></script>
         <script src="public/js/impact_lumiere_accidents.js"></script>
         <script src="public/js/evolution_nb_accidents_par_mois.js"></script>
+        <script src="public/js/evolution_nb_accidents_annuellement.js"></script>
     </body>
 </html>

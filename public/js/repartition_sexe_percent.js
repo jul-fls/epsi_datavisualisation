@@ -27,7 +27,7 @@ fetch(location.origin+'/data/accidents/ratio-sexe-conducteurs-percent')
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: true,
+                        display: false,
                         position: 'top'
                     }
                 },

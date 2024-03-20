@@ -10,9 +10,9 @@ fetch(location.origin+'/data/accidents/ratio-person-implied-count-quantity')
                     label: 'Nombre d\'accidents par nombre d\'usagers impliqués',
                     data: [data.lessThan3, data.lessThan6, data.atLeast6],
                     backgroundColor: [
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(201, 203, 207, 0.6)'
+                        'rgba(33, 127, 206, 0.6)',
+                        'rgba(222, 82, 66, 0.6)',
+                        'rgba(16, 148, 33, 0.6)'
                     ],
                     borderColor: [
                         'rgba(54, 162, 235, 1)',
@@ -27,13 +27,13 @@ fetch(location.origin+'/data/accidents/ratio-person-implied-count-quantity')
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: true,
+                        display: false,
                         position: 'top'
                     }
                 },
                 scales: {
                     y: {
-                        beginAtZero: true,
+                        beginAtZero: false,
                         callback: function(value) {
                             return value;
                         }

@@ -5,11 +5,11 @@ var path = require('path')
 var fs = require('fs')
 var os = require('os')
 
-function parseCSVFile (filePath) {
+function parseCSVFile (filePath,separator=";") {
   return new Promise((resolve, reject) => {
     const results = []
     fs.createReadStream(filePath)
-      .pipe(csv({ separator: ';' })) // Adjust the separator as needed
+      .pipe(csv({ separator: separator })) // Adjust the separator as needed
       .on('data', data => results.push(data))
       .on('end', () => {
         resolve(results)
@@ -430,6 +430,24 @@ app.get('/data/accidents/evolution-nb-accidents-par-mois-quantity', async functi
 			novembre: november,
 			decembre: december
 		})
+	} catch (error) {
+		console.error(error)
+		res.status(500).send('Error processing data')
+	}
+});
+
+// now i want a route like this evolution-nb-accidents-par-an-quantity that returns the number of accidents for each year using the src_data file accidents-trend-by-year.csv
+app.get('/data/accidents/evolution-nb-accidents-par-an-quantity', async function (req, res) {
+	const src_data = path.join(__dirname, 'src_data')
+	const accidentsFilePath = path.join(src_data, 'accidents-trend-by-year.csv')
+
+	try {
+		const accidents_for_years = await parseCSVFile(accidentsFilePath, ",")
+		let data = {}
+		accidents_for_years.forEach(year => {
+			data["annee"+year.year] = parseInt(year.nb_accidents);
+		});
+		res.json(data)
 	} catch (error) {
 		console.error(error)
 		res.status(500).send('Error processing data')

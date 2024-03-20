@@ -24,7 +24,17 @@ fetch(location.origin+'/data/accidents')
                 default:
                     classNameColor = 'marker-icon-green';
             }
-            var marker = L.marker([accident.lat, accident.long], {title: accident.Accident_Id}); // Assuming 'Accident_Id' is in your data
+            let newIcon = L.icon({
+                iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+                shadowSize: [41, 41],
+                shadowAnchor: [12, 41],
+                className : classNameColor,
+            });
+            var marker = L.marker([accident.lat, accident.long], {icon: newIcon}, {title: accident.Accident_Id});
             marker.bindPopup('Accident le ' + accident.jour + '/' + accident.mois + '/' + accident.an + ' à ' + accident.hrmn + ' impliquant ' + accident.people_implied_count + ' personnes');
             markers.addLayer(marker); // Add marker to MarkerCluster group
         });
