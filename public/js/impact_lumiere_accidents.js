@@ -23,6 +23,7 @@ fetch(location.origin+'/data/accidents/impacts-lumiere-percent')
                 }]
             },
             options: {
+                maintainAspectRatio: false,
                 responsive: true,
                 plugins: {
                     legend: {

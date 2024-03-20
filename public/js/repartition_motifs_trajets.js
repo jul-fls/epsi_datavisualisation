@@ -1,7 +1,11 @@
 fetch(location.origin+'/data/accidents/ratio-motifs-trajets-percent')
     .then(response => response.json())
     .then(data => {
-        const ctx = document.getElementById('repartition_motifs_trajets').getContext('2d');
+        let canvas = document.getElementById('repartition_motifs_trajets');
+        // window.addEventListener('beforePrint', () => {
+        //     canvas.resize(192,100)
+        // });
+        const ctx = canvas.getContext('2d');
         const genderChart = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -31,6 +35,7 @@ fetch(location.origin+'/data/accidents/ratio-motifs-trajets-percent')
                 }]
             },
             options: {
+                maintainAspectRatio: false,
                 responsive: true,
                 plugins: {
                     legend: {

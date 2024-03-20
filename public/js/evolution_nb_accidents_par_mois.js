@@ -53,7 +53,14 @@ fetch(location.origin+'/data/accidents/evolution-nb-accidents-par-mois-quantity'
                 ]
             },
             options: {
+                maintainAspectRatio: false,
                 responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,

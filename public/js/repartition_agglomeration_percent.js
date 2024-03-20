@@ -23,7 +23,14 @@ fetch(location.origin+'/data/accidents/ratio-accidents-in-out-city-percent')
                 }]
             },
             options: {
+                maintainAspectRatio: false,
                 responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
